@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+
+  code {
+    @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+  }
+}

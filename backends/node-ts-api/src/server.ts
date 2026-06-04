@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express'
 import cors from 'cors'
+import usersRouter from './routes/users'
 
 const app = express()
 const PORT = 3000
@@ -7,6 +8,8 @@ const PORT = 3000
 // Middleware
 app.use(cors())
 app.use(express.json())
+
+app.use('/api/users', usersRouter)
 
 // Health check endpoint
 app.get('/api/health', (req: Request, res: Response) => {
@@ -18,31 +21,6 @@ app.get('/api/health', (req: Request, res: Response) => {
   })
 })
 
-// Sample endpoints
-app.get('/api/users', (req: Request, res: Response) => {
-  res.json({
-    users: [
-      { id: 1, name: 'Alice', email: 'alice@example.com' },
-      { id: 2, name: 'Bob', email: 'bob@example.com' },
-      { id: 3, name: 'Charlie', email: 'charlie@example.com' }
-    ]
-  })
-})
-
-app.post('/api/users', (req: Request, res: Response) => {
-  const { name, email } = req.body
-
-  if (!name || !email) {
-    return res.status(400).json({ error: 'Name and email required' })
-  }
-
-  res.status(201).json({
-    id: Math.floor(Math.random() * 1000),
-    name,
-    email,
-    createdAt: new Date().toISOString()
-  })
-})
 
 // Root endpoint
 app.get('/', (req: Request, res: Response) => {

@@ -6,11 +6,8 @@ const API_BASE = 'http://localhost:3000'
 
 const topics = {
   'Phase 1: Foundation': [
-    { id: 1, name: 'API Calls', days: '1-2', path: '/api-calls' },
-    { id: 2, name: 'TanStack Query', days: '3-4', path: '/tanstack-query' },
-    { id: 3, name: 'Debounce & Throttle', days: '5-6', path: '/debounce-throttle' },
-    { id: 4, name: 'Pagination & Virtual Scroll', days: '7-8', path: '/pagination' },
-    { id: 5, name: 'Filtering & Sorting', days: '9-10', path: '/filtering' },
+    { id: 1, name: 'API Calls + TanStack Query', days: '1-4', path: '/api-calls' },
+    { id: 3, name: 'Debounce & Throttle + Pagination + Filtering & Sorting', days: '5-10', path: '/product-search' },
     { id: 6, name: 'Forms & Validation', days: '11-12', path: '/forms' },
     { id: 7, name: 'File Uploads & Progress', days: '13-14', path: '/file-uploads' },
   ],
